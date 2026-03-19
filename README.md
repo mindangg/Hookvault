@@ -1,56 +1,76 @@
 # HookVault
 
-AI-powered hook analyzer for TikTok, Instagram Reels, and YouTube Shorts. Transcribes, translates to Vietnamese, and rewrites in your personal writing style.
+AI-powered hook analyzer for short-form video creators.
+
+Paste a TikTok, Instagram Reel, or YouTube Shorts URL — get the hook, full transcript, Vietnamese translation, and a rewrite in your own voice. Plus a section-by-section script breakdown so you can steal the structure, not just the words.
+
+---
+
+## Who it's for
+
+Vietnamese content creators who study viral short-form videos and want to adapt proven hooks and script structures into their own content — without sounding like a copy-paste.
+
+---
+
+## What you get
+
+| Tab | What it shows |
+|-----|--------------|
+| **Hook** | Opening 1–3 sentences pulled word-for-word from the transcript |
+| **Transcript** | Full word-for-word transcription in English + Vietnamese |
+| **My Voice** | Script rewritten in your personal Vietnamese style (requires Voice Profile) |
+| **Script Structure** | Section-by-section breakdown with timestamps, purpose, and technique labels |
+
+---
+
+## Voice Profile
+
+Paste 3–5 samples of your own Vietnamese writing — captions, scripts, messages. Every analysis will rewrite the script to match your exact tone, vocabulary, and sentence style.
+
+Your profile is saved locally in your browser. Never stored on any server.
+
+---
 
 ## Setup
 
-1. Install Node.js v18+ from [nodejs.org](https://nodejs.org)
-2. Clone the repo
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Copy `.env.example` to `.env.local`:
-   ```bash
-   cp .env.local.example .env.local.local
-   ```
-5. Add your API keys to `.env.local`:
-   - `OPENAI_API_KEY` → [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-   - `SUPADATA_API_KEY` → [supadata.ai](https://supadata.ai)
+**Requirements:** Node.js v18+
 
-6. Run the dev server:
-   ```bash
-   npm run dev
-   ```
-7. Open [http://localhost:3000](http://localhost:3000)
+```bash
+# 1. Install dependencies
+npm install
 
-## Using Voice Profile
+# 2. Set up environment variables
+cp .env.example .env.local
+```
 
-1. Click the **⚙** gear icon in the top-right corner
-2. Paste 3–5 samples of your Vietnamese writing (captions, scripts, messages)
-3. Click **Save Profile**
-4. Every analysis will now rewrite the transcript in your style automatically
-5. A small dot indicator appears on the gear icon when a profile is active
+Add your keys to `.env.local`:
 
-## Features
+```
+OPENAI_API_KEY=        # platform.openai.com/api-keys
+SUPADATA_API_KEY=      # supadata.ai
+```
 
-- 🔗 Paste any TikTok, Instagram Reel, or YouTube Shorts URL
-- 📋 Word-for-word English transcription via Supadata API
-- 🇻🇳 Full Vietnamese translation
-- ✍️ Personal voice rewrite (requires Voice Profile)
-- 📊 Script structure breakdown with timing, purpose, and technique analysis
-- 📎 One-click copy on every tab
-- 💾 Voice profile saved locally in your browser
+```bash
+# 3. Run
+npm run dev
+```
 
-## Tech Stack
+Open [http://localhost:3000](http://localhost:3000)
 
-- Next.js 15 (App Router)
-- React 19
-- Tailwind CSS v4
-- TypeScript 5
-- OpenAI gpt-4o-mini
-- Supadata API
-- Motion (Framer Motion v12)
-- Spline 3D scenes
-# Hookvault
-# Hookvault
+---
+
+## Supported platforms
+
+- TikTok
+- Instagram Reels
+- YouTube Shorts
+
+---
+
+## Tech stack
+
+- **Next.js 15** (App Router) + React 19 + TypeScript 5
+- **Tailwind CSS v4**
+- **Supadata API** — video transcription
+- **OpenAI gpt-4o-mini** — translation, hook extraction, script analysis
+- **Framer Motion** + **Spline** — hero animations
