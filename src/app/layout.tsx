@@ -17,7 +17,7 @@ const dmSerifDisplay = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: "HookVault — AI Hook Analyzer",
-  description: "Paste a short-form video. Get the hook, translation, and your personalized Vietnamese rewrite.",
+  description: "Paste a short-form video. Get the script.",
 };
 
 export default function RootLayout({

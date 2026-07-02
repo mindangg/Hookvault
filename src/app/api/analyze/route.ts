@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { detectPlatform, validateUrl } from "@/lib/utils";
 import { transcribeVideo } from "@/lib/supadata";
-import { analyzeTranscript } from "@/lib/openai";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { url, voiceProfile } = body as { url: string; voiceProfile: string | null };
+    const { url } = body as { url: string };
 
     if (!url) {
       return NextResponse.json({ error: "URL is required" }, { status: 400 });
@@ -34,10 +33,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Analyze with OpenAI
-    const result = await analyzeTranscript(transcript, voiceProfile);
-
-    return NextResponse.json({ ...result, platform });
+    return NextResponse.json({ script: transcript, platform });
   } catch (err: unknown) {
     console.error("Analyze error:", err);
     const message = err instanceof Error ? err.message : "Something went wrong";
