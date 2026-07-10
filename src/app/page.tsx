@@ -13,6 +13,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [statusIndex, setStatusIndex] = useState(0);
   const [script, setScript] = useState<string | null>(null);
+  const [translation, setTranslation] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   // Rotate status messages during loading
@@ -28,6 +29,7 @@ export default function Home() {
     setIsLoading(true);
     setError(null);
     setScript(null);
+    setTranslation(null);
     setStatusIndex(0);
 
     try {
@@ -44,6 +46,7 @@ export default function Home() {
       }
 
       setScript(data.script);
+      setTranslation(data.translation ?? null);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
@@ -94,7 +97,7 @@ export default function Home() {
           {/* Result */}
           {script && !isLoading && (
             <div className="mt-8 bg-white/[0.03] border border-white/[0.08] rounded-xl p-6">
-              <TranscriptPanel text={script} />
+              <TranscriptPanel text={script} translation={translation} />
             </div>
           )}
         </div>

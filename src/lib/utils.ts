@@ -19,3 +19,10 @@ export function validateUrl(url: string): boolean {
   const platform = detectPlatform(url);
   return platform !== null;
 }
+
+const VIETNAMESE_CHARS = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i;
+
+export function isLikelyVietnamese(text: string): boolean {
+  if (!text) return false;
+  return VIETNAMESE_CHARS.test(text);
+}

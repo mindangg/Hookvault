@@ -16,7 +16,7 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "HookVault — AI Hook Analyzer",
+  title: "HookVault - AI Hook Analyzer",
   description: "Paste a short-form video. Get the script.",
 };
 

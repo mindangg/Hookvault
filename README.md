@@ -43,4 +43,4 @@ Open [http://localhost:3000](http://localhost:3000)
 
 - **Next.js 15** (App Router) + React 19 + TypeScript 5
 - **Tailwind CSS v4**
-- **Supadata API** — video transcription
+- **Supadata API** - video transcription
